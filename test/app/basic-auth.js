@@ -2,7 +2,7 @@
 describe('Basic Auth', function () {
   it('should return the value', function (done) {
     var app = koala()
-    app.use(function* (next) {
+    app.use(async (next) => {
       this.body = this.request.basicAuth
     })
 
