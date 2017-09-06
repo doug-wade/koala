@@ -1,18 +1,18 @@
 
 describe('Basic Auth', function () {
   it('should return the value', function (done) {
-    var app = koala()
+    var app = new Koala()
     app.use(async (next) => {
       this.body = this.request.basicAuth
     })
 
     request(app.listen())
-    .get('/')
-    .auth('username', 'password')
-    .expect(200)
-    .expect({
-      name: 'username',
-      pass: 'password',
-    }, done)
+       .get('/')
+       .auth('username', 'password')
+       .expect(200)
+       .expect({
+         name: 'username',
+         pass: 'password',
+       }, done)
   })
 })

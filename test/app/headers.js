@@ -2,7 +2,7 @@
 describe('Set headers', function () {
   describe('X-Response-Time', function() {
     it('should get X-Response-Time correctly by default', function(done) {
-      var app = koala()
+      var app = new Koala()
 
       request(app.listen())
       .get('/')
@@ -11,7 +11,7 @@ describe('Set headers', function () {
       .end(done)
     })
     it('should not get X-Response-Time by options.responseTime = false', function(done) {
-      var app = koala({
+      var app = new Koala({
         responseTime: false
       })
 
@@ -27,7 +27,7 @@ describe('Set headers', function () {
 
   describe('X-Frame-Options', function() {
     it('should get X-Frame-Options DENY by default', function(done) {
-      var app = koala()
+      var app = new Koala()
 
       request(app.listen())
       .get('/')
@@ -36,7 +36,7 @@ describe('Set headers', function () {
       .end(done)
     })
     it('should not get X-Frame-Options by xframe = false', function(done) {
-      var app = koala({
+      var app = new Koala({
         security: {
           xframe: false
         }
@@ -51,7 +51,7 @@ describe('Set headers', function () {
       })
     })
     it('should get X-Frame-Options DENY by xframe = true', function(done) {
-      var app = koala({
+      var app = new Koala({
         security: {
           xframe: true
         }
@@ -64,7 +64,7 @@ describe('Set headers', function () {
       .end(done)
     })
     it('should get X-Frame-Options SAMEORIGIN by xframe = same', function(done) {
-      var app = koala({
+      var app = new Koala({
         security: {
           xframe: 'same'
         }

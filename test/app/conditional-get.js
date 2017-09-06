@@ -3,7 +3,7 @@ describe('Conditional-Get', function () {
   describe('when a body is set', function () {
     var etag
 
-    var app = koala()
+    var app = new Koala()
     app.use(function* (next) {
       this.body = 'hello'
     })

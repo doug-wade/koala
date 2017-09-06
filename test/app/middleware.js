@@ -2,7 +2,7 @@
 describe('Middlewares', function () {
   describe('Session', function() {
     it('should has this.session by default', function(done) {
-      var app = koala()
+      var app = new Koala()
 
       app.use(function *() {
         this.body = this.session;
@@ -14,7 +14,7 @@ describe('Middlewares', function () {
       .end(done)
     })
     it('should has no this.session by options.session = false', function(done) {
-      var app = koala({
+      var app = new Koala({
         session: false
       })
 

@@ -3,7 +3,7 @@ http = require('http')
 assert = require('assert')
 request = require('supertest')
 
-koala = require('../..')
+Koala = require('../..')
 
 require('fs').readdirSync(__dirname).forEach(function (name) {
   if (name[0] === '.') return

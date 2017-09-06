@@ -3,7 +3,7 @@ var PassThrough = require('stream').PassThrough
 
 describe('Object Streams', function () {
   it('should be supported', function (done) {
-    var app = koala()
+    var app = new Koala()
     app.use(function* (next) {
       var body = this.body = new PassThrough({
         objectMode: true

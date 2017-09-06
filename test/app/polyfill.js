@@ -2,7 +2,7 @@
 describe.skip('Polyfills', function () {
   describe('GET /polyfill.js', function () {
     it('should return the polyfill', function (done) {
-      var app = koala()
+      var app = new Koala()
       request(app.listen())
       .get('/polyfill.js')
       .expect(200)

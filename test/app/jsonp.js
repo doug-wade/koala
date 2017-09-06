@@ -1,7 +1,7 @@
 
 describe('jsonp', function () {
   it('should return jsonp response', function (done) {
-    var app = koala({
+    var app = new Koala({
       jsonp: {
         callback: '_callback'
       }
@@ -17,7 +17,7 @@ describe('jsonp', function () {
   })
 
   it('should return json response', function (done) {
-    var app = koala({
+    var app = new Koala({
       jsonp: {
         callback: '_callback'
       }

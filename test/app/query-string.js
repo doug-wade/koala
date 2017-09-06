@@ -2,7 +2,7 @@
 describe('Nested Query Strings', function () {
   describe('when options.qs = false', function () {
     it('should not support nested query strings', function (done) {
-      var app = koala()
+      var app = new Koala()
       app.use(function* (next) {
         this.response.body = this.request.query
       })
@@ -23,7 +23,7 @@ describe('Nested Query Strings', function () {
 
   describe('when options.qs = true', function () {
     it('should support nested query strings', function (done) {
-      var app = koala({
+      var app = new Koala({
         qs: true
       })
       app.use(function* (next) {
