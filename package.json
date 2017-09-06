@@ -45,6 +45,9 @@
     "mocha": "^3.5.0",
     "supertest": "^3.0.0"
   },
+  "engines": {
+    "node": ">= 8.0.0"
+  },
   "main": "lib",
   "files": [
     "lib",
